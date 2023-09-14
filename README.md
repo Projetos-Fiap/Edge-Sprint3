@@ -33,7 +33,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
-  <summary>###Arquivo README (30 pontos):</summary>
+  <summary>Arquivo README (30 pontos):</summary>
   <li>Elaborar um README completo e bem estruturado, descrevendo detalhes do projeto.</li>
   <li>Incluir um draft da arquitetura proposta para a solução IoT, envolvendo IoT devices, back-end e front-end.</li>
   <li>Descrever os recursos necessários para implementar a solução, considerando os dispositivos IoT, o back-end e o front-end.</li>
