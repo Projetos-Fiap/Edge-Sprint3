@@ -5,15 +5,19 @@ O objetivo desta tarefa é desenvolver a arquitetura inicial de uma aplicação 
 provenientes de dispositivos conectados.
 
 # Resumo do projeto
-Nosso projeto, "TheGreenProject", tem como objetivo principal incentivar a reciclagem de lixo dentro da cidade de São Paulo. Como produto principal temos um site que traz diversas informações sobre reciclagem, como um mapa interativo onde o usuário consegue ver qual o ponto mais próximo onde ele pode reciclar determinado tipo de lixo, além de tutoriais, artigos e reportagens que conscientizem o cidadão sobre os benefícios da reciclagem e incentive o mesmo a fortalecer essa prática. 
+Nosso projeto, ***"TheGreenProject"***, tem como objetivo principal incentivar a reciclagem de lixo dentro da cidade de São Paulo. Como produto principal temos um site que traz diversas informações sobre reciclagem, como um mapa interativo onde o usuário consegue ver qual o ponto mais próximo onde ele pode reciclar determinado tipo de lixo, além de tutoriais, artigos e reportagens que conscientizem o cidadão sobre os benefícios da reciclagem e incentive o mesmo a fortalecer essa prática. 
 
-Além disso, pretendemos desenvolver uma máquina apelidada de "GreenMachine", um tipo de reverse vending machine que irá ser instalada em locais públicos estratégicos. Nosso usuário poderá levar tipos selecionados de lixo reciclável (como vidro, alumínio, óleo e pilhas), inserir nessa máquina, e, através do seu cadastro, a máquina irá avaliar e depositar pontos para o usuário de acordo com a quantidade de material depositado. Esses pontos depois poderão ser trocados por benefícios, como crédito no Bilhete Único, desconto na conta de luz ou água, entre outros.
+Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"***, um tipo de reverse vending machine que irá ser instalada em locais públicos estratégicos. Nosso usuário poderá levar tipos selecionados de lixo reciclável (como vidro, alumínio, óleo e pilhas), inserir nessa máquina, e, através do seu cadastro, a máquina irá avaliar e depositar pontos para o usuário de acordo com a quantidade de material depositado. Esses pontos depois poderão ser trocados por benefícios, como crédito no Bilhete Único, desconto na conta de luz ou água, entre outros. 
 
 # Arquitetura do projeto
 
 ### Dispositivo IoT
 
+<li></li>
+
 ### Back-end
+
+<li></li>
 
 ### Front-end
 
@@ -67,7 +71,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
-  <summary>Arquivo README (30 pontos):</summary>
+  <summary>**Arquivo README (30 pontos):</summary>
 
   <br>
   
