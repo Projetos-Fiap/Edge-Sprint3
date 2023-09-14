@@ -9,12 +9,14 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 
 <details>
   <summary>Introdução (20 pontos):</summary>
+  
   <li>Explicar os conceitos envolvidos na Internet das Coisas (IoT) e a importância dessa tecnologia.</li>
   <li>Apresentar a arquitetura adotada para a aplicação IoT, destacando os componentes principais e como eles interagem entre si.</li>
 </details>
 
 <details>
   <summary>Desenvolvimento (20 pontos):</summary>
+  
   <li>Demonstrar a instalação de uma plataforma de IoT em um CSP (Cloud Service Provider) ou VM (Virtual Machine) local.</li>
   <li>Explicar os passos necessários para configurar a plataforma de IoT, como a criação de dispositivos virtuais, definição de
   protocolos de comunicação e outras configurações relevantes.</li>
@@ -23,6 +25,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 
 <details>  
   <summary>Demonstração (20 pontos):</summary>
+  
   <li>Executar uma collection básica, demonstrando o funcionamento da plataforma de IoT.</li>
   <li>Incluir um health check para verificar o status da aplicação.</li>
   <li>Mostrar a criação de uma entidade lógica de dispositivo IoT, destacando as informações necessárias e como esses dispositivos
@@ -34,6 +37,7 @@ Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
   <summary>Arquivo README (30 pontos):</summary>
+  
   <li>Elaborar um README completo e bem estruturado, descrevendo detalhes do projeto.</li>
   <li>Incluir um draft da arquitetura proposta para a solução IoT, envolvendo IoT devices, back-end e front-end.</li>
   <li>Descrever os recursos necessários para implementar a solução, considerando os dispositivos IoT, o back-end e o front-end.</li>
@@ -42,5 +46,6 @@ Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
   <summary>Códigos Fonte (10 pontos):</summary>
+  
   <li>Incluir os códigos desenvolvidos e os arquivos necessários para o funcionamento da aplicação e sua replicação.</li>
 </details>
