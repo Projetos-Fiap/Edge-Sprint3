@@ -40,6 +40,8 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 
 <details>
   <summary>Desenvolvimento (20 pontos):</summary>
+
+  <br>
   
   <li>Demonstrar a instalação de uma plataforma de IoT em um CSP (Cloud Service Provider) ou VM (Virtual Machine) local.</li>
   <li>Explicar os passos necessários para configurar a plataforma de IoT, como a criação de dispositivos virtuais, definição de
@@ -49,6 +51,8 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 
 <details>  
   <summary>Demonstração (20 pontos):</summary>
+
+  <br>
   
   <li>Executar uma collection básica, demonstrando o funcionamento da plataforma de IoT.</li>
   <li>Incluir um health check para verificar o status da aplicação.</li>
@@ -61,6 +65,8 @@ Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
   <summary>Arquivo README (30 pontos):</summary>
+
+  <br>
   
   <li>Elaborar um README completo e bem estruturado, descrevendo detalhes do projeto.</li>
   <li>Incluir um draft da arquitetura proposta para a solução IoT, envolvendo IoT devices, back-end e front-end.</li>
@@ -70,6 +76,8 @@ Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
   <summary>Códigos Fonte (10 pontos):</summary>
+
+  <br>
   
   <li>Incluir os códigos desenvolvidos e os arquivos necessários para o funcionamento da aplicação e sua replicação.</li>
 </details>
