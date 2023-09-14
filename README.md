@@ -8,13 +8,13 @@ provenientes de dispositivos conectados.
 Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de um link (por exemplo, YouTube, Vimeo, etc.), abordando os seguintes pontos:
 
 <details>
-  #### Introdução (20 pontos):
+  <summary>Introdução (20 pontos):</summary>
   <li>Explicar os conceitos envolvidos na Internet das Coisas (IoT) e a importância dessa tecnologia.</li>
   <li>Apresentar a arquitetura adotada para a aplicação IoT, destacando os componentes principais e como eles interagem entre si.</li>
 </details>
 
 <details>
-  #### <sumary>Desenvolvimento (20 pontos):</sumary>
+  <sumary>Desenvolvimento (20 pontos):</sumary>
   <li>Demonstrar a instalação de uma plataforma de IoT em um CSP (Cloud Service Provider) ou VM (Virtual Machine) local.</li>
   <li>Explicar os passos necessários para configurar a plataforma de IoT, como a criação de dispositivos virtuais, definição de
   protocolos de comunicação e outras configurações relevantes.</li>
@@ -22,7 +22,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 </details>
 
 <details>  
-  #### Demonstração (20 pontos):
+  <sumary>Demonstração (20 pontos):</sumary>
   <li>Executar uma collection básica, demonstrando o funcionamento da plataforma de IoT.</li>
   <li>Incluir um health check para verificar o status da aplicação.</li>
   <li>Mostrar a criação de uma entidade lógica de dispositivo IoT, destacando as informações necessárias e como esses dispositivos
@@ -32,11 +32,13 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 # Entrega 2 - Repositório GitHub (40 pontos)
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
-#### Arquivo README (30 pontos):
-<li>Elaborar um README completo e bem estruturado, descrevendo detalhes do projeto.</li>
-<li>Incluir um draft da arquitetura proposta para a solução IoT, envolvendo IoT devices, back-end e front-end.</li>
-<li>Descrever os recursos necessários para implementar a solução, considerando os dispositivos IoT, o back-end e o front-end.</li>
-<li>Apresentar instruções de uso, requisitos, dependências e demais informações relevantes.</li>
-
-#### Códigos Fonte (10 pontos): 
-<li>Incluir os códigos desenvolvidos e os arquivos necessários para o funcionamento da aplicação e sua replicação.</li>
+<details>
+  <sumary>Arquivo README (30 pontos):</sumary>
+  <li>Elaborar um README completo e bem estruturado, descrevendo detalhes do projeto.</li>
+  <li>Incluir um draft da arquitetura proposta para a solução IoT, envolvendo IoT devices, back-end e front-end.</li>
+  <li>Descrever os recursos necessários para implementar a solução, considerando os dispositivos IoT, o back-end e o front-end.</li>
+  <li>Apresentar instruções de uso, requisitos, dependências e demais informações relevantes.</li>
+  
+  <sumary>Códigos Fonte (10 pontos):</sumary>
+  <li>Incluir os códigos desenvolvidos e os arquivos necessários para o funcionamento da aplicação e sua replicação.</li>
+</details>
