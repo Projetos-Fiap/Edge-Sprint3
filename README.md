@@ -13,26 +13,33 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 
 ### Dispositivo IoT
 
-<li><b>GreenMachine</b>:</li> A máquina irá conter, no seu interior, um circuito utilizando Arduino que irá fazer a medição de peso do objeto depositado. Esse disposito vai se comunicar via internet com um banco de dados que irá acessar o cadastro do usuário, armazenar o seu histórico de objetos pesados e pontos gerados.
+<li><b>GreenMachine:</b> A máquina irá conter, no seu interior, um circuito utilizando Arduino que irá fazer a medição de peso do objeto depositado. Esse disposito vai se comunicar via internet com um banco de dados que irá acessar o cadastro do usuário, armazenar o seu histórico de objetos pesados e pontos gerados.</li>
 
 ### Back-end
 
-<li><b>Pesagem:</b>O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas.</li>
-<li><b>Comunicação:</b>O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados.</li>
-<li><b>Banco de dados:</b>Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados.</li>
+<li><b>Pesagem:</b> O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas.</li>
+<li><b>Comunicação:</b> O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados.</li>
+<li><b>Banco de dados:</b> Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados.</li>
 <li><b>Conversão:</b> Os dados em gramas serão convertidos para pontos para o usuário, de acordo com o peso e o tipo de material.</li>
 
 ### Front-end
 
+<li><b>Site:</b> Site para web/mobile onde os usuários conseguem acessar seu cadastro, ver seu saldo de pontos, efetuar resgate de benefícios, além de acessar mapas e conteúdos sobre reciclagem.</li>
+<li><b>Display:</b> O display conectado à <b>GreenMachine</b> poderá exibir informações importantes ao usuário</li>
+
 # Recursos necessários / Implementação
 
 ### Dispositivo IoT
+<li><b>GreenMachine:</b> Irá utilizar o microcontrolador Arduino Uno R3, além de componentes como sensor de peso, conversor A/D, display LCD, e placa/módulo Wi-Fi ESP32 para fazer a comunicação com servidor.</li>
 
 ### Back-end
+<li><b>Tago:</b> Iremos utilizar a plataforma online Tago.io para realizar coleta dos dados enviados pelo dispositivo IoT.</li>
+<li><b>Banco de dados:</b> Para construirmos o banco de dados iremos precisar de um protocolo de comunicação, um sistema de gerenciamento como MySQL, uma linguagem de programação como Python e JavaScript, além de APIs. </li>  
 
 ### Front-end
+<li><b>Site:</b> O site será construído utilizando o framework React e aplicando HTML, CSS e JavaScript.</li>  
 
-# Instruções de uso
+# Instruções de uso, requisitos, dependências
 
 # Requisitos de entrega
 
