@@ -1,30 +1,35 @@
-# Edge Computing 
+# Edge Computing, Sprint 3 - Desenvolvimento da arquitetura para uma aplicação IoT
 
-## Sprint 3 - Desenvolvimento da arquitetura para uma aplicação IoT
-
-### Objetivo
+# Objetivo
 O objetivo desta tarefa é desenvolver a arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados
 provenientes de dispositivos conectados.
 
-### Entrega 1 - Vídeo Explicativo (60 pontos)
+# Entrega 1 - Vídeo Explicativo (60 pontos)
 Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de um link (por exemplo, YouTube, Vimeo, etc.), abordando os seguintes pontos:
-#### Introdução (20 pontos):
-<li>Explicar os conceitos envolvidos na Internet das Coisas (IoT) e a importância dessa tecnologia.<</li>
-<li>Apresentar a arquitetura adotada para a aplicação IoT, destacando os componentes principais e como eles interagem entre si.<</li>
 
-#### Desenvolvimento (20 pontos):
-<li>Demonstrar a instalação de uma plataforma de IoT em um CSP (Cloud Service Provider) ou VM (Virtual Machine) local.<</li>
-<li>Explicar os passos necessários para configurar a plataforma de IoT, como a criação de dispositivos virtuais, definição de
-protocolos de comunicação e outras configurações relevantes.<</li>
-<li>Especificar corretamente o hardware a ser utilizado com base nos requisitos do projeto.<</li>
-  
-#### Demonstração (20 pontos):
-<li>Executar uma collection básica, demonstrando o funcionamento da plataforma de IoT.<</li>
-<li>Incluir um health check para verificar o status da aplicação.<</li>
-<li>Mostrar a criação de uma entidade lógica de dispositivo IoT, destacando as informações necessárias e como esses dispositivos
-serão usados na aplicação.<</li>
+<details>
+  #### Introdução (20 pontos):
+  <li>Explicar os conceitos envolvidos na Internet das Coisas (IoT) e a importância dessa tecnologia.</li>
+  <li>Apresentar a arquitetura adotada para a aplicação IoT, destacando os componentes principais e como eles interagem entre si.</li>
+</details>
 
-### Entrega 2 - Repositório GitHub (40 pontos)
+<details>
+  #### <sumary>Desenvolvimento (20 pontos):</sumary>
+  <li>Demonstrar a instalação de uma plataforma de IoT em um CSP (Cloud Service Provider) ou VM (Virtual Machine) local.</li>
+  <li>Explicar os passos necessários para configurar a plataforma de IoT, como a criação de dispositivos virtuais, definição de
+  protocolos de comunicação e outras configurações relevantes.</li>
+  <li>Especificar corretamente o hardware a ser utilizado com base nos requisitos do projeto.</li>
+</details>
+
+<details>  
+  #### Demonstração (20 pontos):
+  <li>Executar uma collection básica, demonstrando o funcionamento da plataforma de IoT.</li>
+  <li>Incluir um health check para verificar o status da aplicação.</li>
+  <li>Mostrar a criação de uma entidade lógica de dispositivo IoT, destacando as informações necessárias e como esses dispositivos
+  serão usados na aplicação.</li>
+</details>  
+
+# Entrega 2 - Repositório GitHub (40 pontos)
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 #### Arquivo README (30 pontos):
