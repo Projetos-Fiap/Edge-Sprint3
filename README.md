@@ -17,10 +17,10 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 
 ### Back-end
 
-<li><b>Pesagem:</b></li> O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas. </li>
-<li><b>Comunicação:</b> O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados. </li>
-<li><b>Banco de dados:</b> Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados. </li>
-<li><b>Conversão:</b></li> Os dados em gramas serão convertidos para pontos para o usuário, de acordo com o peso e o tipo de material. </li>
+<li><b>Pesagem:</b>O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas.</li>
+<li><b>Comunicação:</b>O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados.</li>
+<li><b>Banco de dados:</b>Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados.</li>
+<li><b>Conversão:</b> Os dados em gramas serão convertidos para pontos para o usuário, de acordo com o peso e o tipo de material.</li>
 
 ### Front-end
 
