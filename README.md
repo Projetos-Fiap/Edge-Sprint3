@@ -4,7 +4,29 @@
 O objetivo desta tarefa é desenvolver a arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados
 provenientes de dispositivos conectados.
 
-# Entrega 1 - Vídeo Explicativo (60 pontos)
+# Resumo do projeto
+
+# Arquitetura do projeto
+
+## Dispositivo IoT
+
+## Back-end
+
+## Front-end
+
+# Recursos necessários / Implementação
+
+## Dispositivo IoT
+
+## Back-end
+
+## Front-end
+
+# Instruções de uso
+
+# Requisitos de entrega
+
+## Entrega 1 - Vídeo Explicativo (60 pontos)
 Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de um link (por exemplo, YouTube, Vimeo, etc.), abordando os seguintes pontos:
 
 <details>
@@ -32,7 +54,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
   serão usados na aplicação.</li>
 </details>  
 
-# Entrega 2 - Repositório GitHub (40 pontos)
+## Entrega 2 - Repositório GitHub (40 pontos)
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
