@@ -9,7 +9,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 
 <details>
   <summary>Introdução (20 pontos):</summary>
-  <br>
+
   <li>Explicar os conceitos envolvidos na Internet das Coisas (IoT) e a importância dessa tecnologia.</li>
   <li>Apresentar a arquitetura adotada para a aplicação IoT, destacando os componentes principais e como eles interagem entre si.</li>
 </details>
