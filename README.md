@@ -81,7 +81,7 @@ Criar um vídeo de até 3 minutos e disponibilizá-lo publicamente por meio de u
 Disponibilizar um repositório GitHub contendo os seguintes itens:
 
 <details>
-  <summary>**Arquivo README (30 pontos):</summary>
+  <summary>Arquivo README (30 pontos):</summary>
 
   <br>
   
