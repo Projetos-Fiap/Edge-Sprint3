@@ -13,11 +13,14 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 
 ### Dispositivo IoT
 
-<li> <b>GreenMachine</b>: </li>
+<li><b>GreenMachine</b>:</li> A máquina irá conter, no seu interior, um circuito utilizando Arduino que irá fazer a medição de peso do objeto depositado. Esse disposito vai se comunicar via internet com um banco de dados que irá acessar o cadastro do usuário, armazenar o seu histórico de objetos pesados e pontos gerados.
 
 ### Back-end
 
-<li></li>
+<li><b>Pesagem:</b></li> O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas. </li>
+<li><b>Comunicação:</b> O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados. </li>
+<li><b>Banco de dados:</b> Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados. </li>
+<li><b>Conversão:</b></li> Os dados em gramas serão convertidos para pontos para o usuário, de acordo com o peso e o tipo de material. </li>
 
 ### Front-end
 
