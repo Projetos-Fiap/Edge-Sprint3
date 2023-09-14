@@ -13,7 +13,7 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 
 ### Dispositivo IoT
 
-<li></li>
+<li> <b>GreenMachine</b>: </li>
 
 ### Back-end
 
