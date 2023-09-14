@@ -39,7 +39,18 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 ### Front-end
 <li><b>Site:</b> O site será construído utilizando o framework React e aplicando HTML, CSS e JavaScript.</li>  
 
-# Instruções de uso, requisitos, dependências
+# Instruções de uso, dependências
+
+<li>Para fazer o sistema funcionar, precisamos montar o circuito com o Arduino, balança e display. Depois, integrar esse circuito ao módulo Wi-Fi. Então, carregar cada respectivo código em suas memórias.</li>
+<li>Para o código funcionar corretamente, é preciso instalarmos e declararmos no começo do código as seguintes libraries:</li>
+
+```c
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include "Arduino.h"
+#include "WiFi.h"
+#include "HTTPClient.h"
+```
 
 # Requisitos de entrega
 
