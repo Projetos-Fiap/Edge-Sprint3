@@ -1,4 +1,4 @@
-# Edge Computing, Sprint 3 - Desenvolvimento da arquitetura para uma aplicação IoT
+# Edge Computing | Sprint 3 | Desenvolvimento da arquitetura para uma aplicação IoT
 
 # Objetivo
 O objetivo desta tarefa é desenvolver a arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados
