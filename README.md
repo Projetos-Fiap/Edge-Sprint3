@@ -13,36 +13,39 @@ Além disso, pretendemos desenvolver uma máquina apelidada de ***"GreenMachine"
 
 ### Dispositivo IoT
 
-<li><b>GreenMachine:</b> A máquina irá conter, no seu interior, um circuito utilizando Arduino que irá fazer a medição de peso do objeto depositado. Esse disposito vai se comunicar via internet com um banco de dados que irá acessar o cadastro do usuário, armazenar o seu histórico de objetos pesados e pontos gerados.</li>
+- **GreenMachine:** A máquina conterá um circuito baseado no Arduino que medirá o peso dos objetos depositados. Este dispositivo se comunicará pela internet com um banco de dados, onde os dados do usuário serão acessados, e o histórico de objetos pesados e os pontos gerados serão armazenados.
 
 ### Back-end
 
-<li><b>Pesagem:</b> O microcontrolador Arduino irá obter informações do sensor de peso e fazer a conversão para unidade de gramas.</li>
-<li><b>Comunicação:</b> O dispositivo IoT irá fazer a coleta de dados do sensor da máquina e enviar os mesmos para o servidor/banco de dados.</li>
-<li><b>Banco de dados:</b> Todas as informações captadas na máquina serão linkadas a um registro/cadastro do usuário e salvas num banco de dados.</li>
-<li><b>Conversão:</b> Os dados em gramas serão convertidos para pontos para o usuário, de acordo com o peso e o tipo de material.</li>
+- **Pesagem:** O microcontrolador Arduino coletará informações do sensor de peso e converterá esses dados para gramas.
+- **Comunicação:** O dispositivo IoT coletará dados do sensor da máquina e os enviará para um servidor ou banco de dados.
+- **Banco de Dados:** Todas as informações coletadas na máquina serão vinculadas ao registro ou cadastro do usuário e armazenadas em um banco de dados.
+- **Conversão:** Os dados em gramas serão convertidos em pontos para o usuário, levando em consideração o peso e o tipo de material.
 
 ### Front-end
 
-<li><b>Site:</b> Site para web/mobile onde os usuários conseguem acessar seu cadastro, ver seu saldo de pontos, efetuar resgate de benefícios, além de acessar mapas e conteúdos sobre reciclagem.</li>
-<li><b>Display:</b> O display conectado à <b>GreenMachine</b> poderá exibir informações importantes ao usuário</li>
+- **Site:** Um site para web/mobile permitirá que os usuários acessem seus cadastros, verifiquem seus saldos de pontos, resgatem benefícios e acessem mapas e conteúdos relacionados à reciclagem.
+- **Display:** Um display conectado à **GreenMachine** exibirá informações importantes para o usuário.
 
-# Recursos necessários / Implementação
+## Recursos Necessários / Implementação
 
 ### Dispositivo IoT
-<li><b>GreenMachine:</b> Irá utilizar o microcontrolador Arduino Uno R3, além de componentes como sensor de peso, conversor A/D, display LCD, e placa/módulo Wi-Fi ESP32 para fazer a comunicação com servidor.</li>
+
+- **GreenMachine:** Utilizará o microcontrolador Arduino Uno R3, bem como componentes como sensor de peso, conversor A/D, display LCD e placa/módulo Wi-Fi ESP32 para comunicação com o servidor.
 
 ### Back-end
-<li><b>Tago:</b> Iremos utilizar a plataforma online Tago.io para realizar coleta dos dados enviados pelo dispositivo IoT.</li>
-<li><b>Banco de dados:</b> Para construirmos o banco de dados iremos precisar de um protocolo de comunicação, um sistema de gerenciamento como MySQL, uma linguagem de programação como Python e JavaScript, além de APIs. </li>  
+
+- **Tago:** Utilizaremos a plataforma online Tago.io para coletar os dados enviados pelo dispositivo IoT.
+- **Banco de Dados:** Para construir o banco de dados, precisaremos de um protocolo de comunicação, um sistema de gerenciamento de banco de dados como o MySQL, linguagens de programação como Python e JavaScript, além de APIs.
 
 ### Front-end
-<li><b>Site:</b> O site será construído utilizando o framework React e aplicando HTML, CSS e JavaScript.</li>  
 
-# Instruções de uso, dependências
+- **Site:** O site será desenvolvido usando o framework React, com aplicação de HTML, CSS e JavaScript.
 
-<li>Para fazer o sistema funcionar, precisamos montar o circuito com o Arduino, balança e display. Depois, integrar esse circuito ao módulo Wi-Fi. Então, carregar cada respectivo código em suas memórias.</li>
-<li>Para o código funcionar corretamente, é preciso instalarmos e declararmos no começo do código as seguintes libraries:</li>
+## Instruções de Uso e Dependências
+
+- Para que o sistema funcione, é necessário montar o circuito com o Arduino, balança e display, e integrar esse circuito ao módulo Wi-Fi. Em seguida, carregue o código correspondente em suas memórias.
+- Para que o código funcione corretamente, é preciso instalar e declarar as seguintes bibliotecas no início do código:
 
 ```c
 #include <Wire.h>
