@@ -11,18 +11,14 @@ Além disso, pretendemos desenvolver uma máquina apelidada de "GreenMachine", u
 # Arquitetura do projeto
 
 ### Dispositivo IoT
-
-- **GreenMachine:** A máquina conterá um circuito baseado no Arduino que medirá o peso dos objetos depositados. Este dispositivo se comunicará pela internet com um banco de dados, onde os dados do usuário serão acessados, e o histórico de objetos pesados e os pontos gerados serão armazenados.
+- **GreenMachine:** A máquina irá conter um circuito baseado no ESP32 que medirá o peso dos objetos depositados. Este dispositivo se comunicará pela internet com um banco de dados, onde os dados do usuário serão acessados, e o histórico de objetos pesados e os pontos gerados serão armazenados.
 
 ### Back-end
-
-- **Pesagem:** O microcontrolador Arduino coletará informações do sensor de peso e converterá esses dados para gramas.
-- **Comunicação:** O dispositivo IoT coletará dados do sensor da máquina e os enviará para um servidor ou banco de dados.
+- **Comunicação:** O ESP32 coletará dados do sensor da máquina e os enviará para um servidor ou banco de dados.
 - **Banco de Dados:** Todas as informações coletadas na máquina serão vinculadas ao registro ou cadastro do usuário e armazenadas em um banco de dados.
 - **Conversão:** Os dados em gramas serão convertidos em pontos para o usuário, levando em consideração o peso e o tipo de material.
 
 ### Front-end
-
 - **Site:** Um site para web/mobile permitirá que os usuários acessem seus cadastros, verifiquem seus saldos de pontos, resgatem benefícios e acessem mapas e conteúdos relacionados à reciclagem.
 - **Display:** Um display conectado à **GreenMachine** exibirá informações importantes para o usuário.
 
@@ -30,7 +26,7 @@ Além disso, pretendemos desenvolver uma máquina apelidada de "GreenMachine", u
 
 ### Dispositivo IoT
 
-- **GreenMachine:** Utilizará o microcontrolador Arduino Uno R3, bem como componentes como sensor de peso, conversor A/D, display LCD e placa/módulo Wi-Fi ESP32 para comunicação com o servidor.
+- **GreenMachine:** Utilizará o microcontrolador ESP32, bem como componentes como sensor de peso, conversor A/D, display LCD, Leds e buzzers.
 
 ### Back-end
 
@@ -43,15 +39,14 @@ Além disso, pretendemos desenvolver uma máquina apelidada de "GreenMachine", u
 
 ## Instruções de Uso e Dependências
 
-- Para que o sistema funcione, é necessário montar o circuito com o Arduino, balança e display, e integrar esse circuito ao módulo Wi-Fi. Em seguida, carregue o código correspondente em suas memórias.
+- Para que o sistema funcione, é necessário montar o circuito com o ESP32, balança e display. Em seguida, carregue o código correspondente em sua memórias.
 - Para que o código funcione corretamente, é preciso instalar e declarar as seguintes bibliotecas no início do código:
 
 ```c
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include "Arduino.h"
-#include "WiFi.h"
-#include "HTTPClient.h"
+#include "ArduinoJson.h"
+#include "EspMQTTClient.h"
 ```
 
 # Grupo
