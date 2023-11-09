@@ -1,32 +1,41 @@
-// Código para o Arduino Uno R3
-// Para funcionar como uma balança, usando um potênciometro como simulador do sensor de peso
-// Utiliza Display LCD I2C
 
 // Adicionamos as bibliotecas que serão utilizadas
-#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+#include "ArduinoJson.h"
+#include "EspMQTTClient.h"
+
+// MQTT Configuracoes
+EspMQTTClient client{
+  "Wokwi-GUEST", //SSID do WiFi
+  "",     // Senha do wifi
+  "mqtt.tago.io",  // Endereço do servidor
+  "Default",       // Usuario
+  "2d563834-26ce-44f0-9a58-bd97c7dcccf7",         // Token do device
+  "esp",           // Nome do device
+  1883             // Porta de comunicação
+};
 
 // Endereço e dimensões do LCD
-LiquidCrystal_I2C lcd(0x20, 16, 2); 
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
-// Variáveis para o potenciômetro
+// Variáveis para o potenciômetr
 int valor_pot = 0; 
 int valor_anterior = -1;
 
 // Variáveis para o LED e Buzzer
-const int ledPin = 13;
-const int buzzerPin = 12;
+const int ledPin = 25;
+const int buzzerPin = 33;
 
 // Variável para controle do tempo de acionamento do buzzer
 unsigned long buzzerStartTime = 0;
 
 // Variáveis para o botão, com ciclo de 3 ações
-int buttonPin = 11;
+int buttonPin = 4;
 int buttonState = HIGH;
 int lastButtonState = HIGH;
 int numActions = 3;
 int action = numActions - 1;
-
 
 void setup() {
 // Inicialização do Display LCD  
@@ -39,42 +48,59 @@ pinMode(buzzerPin, OUTPUT);
 pinMode(buttonPin, INPUT);
 
 // Comunicação serial
-Serial.begin(9600);    
+Serial.begin(9600);
+Serial.println("Conectando WiFi");
+while (!client.isWifiConnected()) {
+  Serial.print('.'); client.loop(); delay(1000);
+  }
+  Serial.println("WiFi Conectado");
+  Serial.println("Conectando com Servidor MQTT");
+while (!client.isMqttConnected()) {
+    Serial.print('.'); client.loop(); delay(1000);
+  }
+Serial.println("MQTT Conectado");
 }
 
-void loop() {
-  valor_pot = analogRead(A0);
-  buttonState = digitalRead(buttonPin); 
+// Callback da EspMQTTClient
+void onConnectionEstablished()
+{}
+char bufferJson[100];
 
-  if (valor_pot != valor_anterior) {
+void loop() {
+  valor_pot = analogRead(34);  // Leia o valor do potenciômetro
+  int valor_mapeado = map(valor_pot, 0, 4095, 0, 1000);  // Mapeie o valor lido para a faixa desejada (0 a 1000g)
+  
+  buttonState = digitalRead(buttonPin);
+
+  if (valor_mapeado != valor_anterior) {
     lcd.clear();
     lcd.setCursor(0, 1);
     lcd.print("Peso: ");
-    lcd.print(min(valor_pot, 1000));
+    lcd.print(valor_mapeado);
     lcd.print("g");
-    valor_anterior = valor_pot;
+    valor_anterior = valor_mapeado;
 
-    if (valor_pot >= 1000) {
+    if (valor_mapeado >= 1000) {
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("LIMITE DE PESO");
       lcd.setCursor(0, 1);
       lcd.print("ATINGIDO");
 
-      while (valor_pot >= 1000) {
+      while (valor_mapeado >= 1000) {
         digitalWrite(ledPin, HIGH);
         tone(buzzerPin, 1000);
         delay(2000);
         noTone(buzzerPin);
         delay(1000);
-        valor_pot = analogRead(A0);
+        valor_pot = analogRead(34);
+        valor_mapeado = map(valor_pot, 0, 4095, 0, 1000);
       }
     } else {
       digitalWrite(ledPin, LOW);
       noTone(buzzerPin);
     }
   }
-
   // Lógica do botão
   if (buttonState != lastButtonState && buttonState == LOW) {
     action = (action + 1) % numActions;  // Incrementa a ação do botão
@@ -101,4 +127,17 @@ void loop() {
   }
 
   lastButtonState = buttonState;  // Armazena o estado atual do botão
+
+ // Enviando para TagoIO
+
+  StaticJsonDocument<300> documentoJson;
+  documentoJson["variable"] = "peso";
+  documentoJson["value"] = valor_mapeado;
+  documentoJson["unit"] = "gramas";
+  serializeJson(documentoJson, bufferJson);
+  Serial.println(bufferJson);
+  client.publish("topicoTDSPI", bufferJson);
+  delay(5000);
+  client.loop();
+
 }
