@@ -1,64 +1,143 @@
-#include <ArduinoJson.h>    // Lib to format JSON Document
-#include "EspMQTTClient.h"  // Lib to comunicate MQTT from ESP
 
-//Doc: https://github.com/plapointe6/EspMQTTClient
+// Adicionamos as bibliotecas que serão utilizadas
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+#include "ArduinoJson.h"
+#include "EspMQTTClient.h"
 
-char  temperaturaJson[100];
-float valorTemperatura = 0;
+// MQTT Configuracoes
+EspMQTTClient client{
+  "Wokwi-GUEST", //SSID do WiFi
+  "",     // Senha do wifi
+  "mqtt.tago.io",  // Endereço do servidor
+  "Default",       // Usuario
+  "2d563834-26ce-44f0-9a58-bd97c7dcccf7",         // Token do device
+  "esp",           // Nome do device
+  1883             // Porta de comunicação
+};
 
-//MQTT and WiFi configuration
-EspMQTTClient client
-(
-  "André's iPhone 11",                //nome da sua rede Wi-Fi
-  "patatipatata",           //senha da sua rede Wi-Fi
-  "mqtt.tago.io",       //Endereço do servidor MQTT
-  "Default",            //User é sempre default pois vamos usar token
-  "2d563834-26ce-44f0-9a58-bd97c7dcccf7",              // Código do Token
-  "esp32",              //Nome do device
-  1883                  //Porta de comunicação padrao
-);
+// Endereço e dimensões do LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2); 
 
-void setup()
-{
-  Serial.begin(9600);
+// Variáveis para o potenciômetr
+int valor_pot = 0; 
+int valor_anterior = -1;
+
+// Variáveis para o LED e Buzzer
+const int ledPin = 25;
+const int buzzerPin = 33;
+
+// Variável para controle do tempo de acionamento do buzzer
+unsigned long buzzerStartTime = 0;
+
+// Variáveis para o botão, com ciclo de 3 ações
+int buttonPin = 4;
+int buttonState = HIGH;
+int lastButtonState = HIGH;
+int numActions = 3;
+int action = numActions - 1;
+
+void setup() {
+// Inicialização do Display LCD  
+lcd.init();
+lcd.backlight();
   
-  Serial.println("Conectando WiFi");
-  while(!client.isWifiConnected()){
-    Serial.print('.');
-    client.loop();
-    delay(1000);
-  }
-  Serial.println("Conectado!");
+// Definição dos pinos
+pinMode(ledPin, OUTPUT);
+pinMode(buzzerPin, OUTPUT);
+pinMode(buttonPin, INPUT);
 
-  Serial.println("Conectando com o broker MQTT");
-  while(!client.isMqttConnected()){
-    Serial.print('.');
-    client.loop();
-    delay(1000);
+// Comunicação serial
+Serial.begin(9600);
+Serial.println("Conectando WiFi");
+while (!client.isWifiConnected()) {
+  Serial.print('.'); client.loop(); delay(1000);
   }
-  Serial.println("Conectado!");
+  Serial.println("WiFi Conectado");
+  Serial.println("Conectando com Servidor MQTT");
+while (!client.isMqttConnected()) {
+    Serial.print('.'); client.loop(); delay(1000);
+  }
+Serial.println("MQTT Conectado");
 }
 
-// This function is called once everything is connected (Wifi and MQTT)
-// WARNING : YOU MUST IMPLEMENT IT IF YOU USE EspMQTTClient
+// Callback da EspMQTTClient
 void onConnectionEstablished()
 {}
+char bufferJson[100];
 
-//loop do programa
-void loop()
-{
-  //Getting temperature and Humidity data
-  valorTemperatura++;
+void loop() {
+  valor_pot = analogRead(34);  // Leia o valor do potenciômetro
+  int valor_mapeado = map(valor_pot, 0, 4095, 0, 1000);  // Mapeie o valor lido para a faixa desejada (0 a 1000g)
+  
+  buttonState = digitalRead(buttonPin);
+
+  if (valor_mapeado != valor_anterior) {
+    lcd.clear();
+    lcd.setCursor(0, 1);
+    lcd.print("Peso: ");
+    lcd.print(valor_mapeado);
+    lcd.print("g");
+    valor_anterior = valor_mapeado;
+
+    if (valor_mapeado >= 1000) {
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("LIMITE DE PESO");
+      lcd.setCursor(0, 1);
+      lcd.print("ATINGIDO");
+
+      while (valor_mapeado >= 1000) {
+        digitalWrite(ledPin, HIGH);
+        tone(buzzerPin, 1000);
+        delay(2000);
+        noTone(buzzerPin);
+        delay(1000);
+        valor_pot = analogRead(34);
+        valor_mapeado = map(valor_pot, 0, 4095, 0, 1000);
+      }
+    } else {
+      digitalWrite(ledPin, LOW);
+      noTone(buzzerPin);
+    }
+  }
+  // Lógica do botão
+  if (buttonState != lastButtonState && buttonState == LOW) {
+    action = (action + 1) % numActions;  // Incrementa a ação do botão
+  }
+  //lcd.setCursor(0, 0);
+  //lcd.print("                ");  // Limpa completamente a linha
+
+  lcd.setCursor(0, 0);
+  // Exibe o texto do botão de acordo com a ação atual
+  switch (action) {
+    case 0:
+      lcd.print("Tipo: Aluminio     ");
+      break;
+    case 1:
+      lcd.print("Tipo: Plastico     ");
+      break;
+    case 2:
+      lcd.print("Tipo: Vidro         ");
+      break;
+    // Adicione mais cases para ações adicionais, se necessário
+
+    default:
+      break;
+  }
+
+  lastButtonState = buttonState;  // Armazena o estado atual do botão
+
+ // Enviando para TagoIO
 
   StaticJsonDocument<300> documentoJson;
-  documentoJson["variable"] = "temperatura";
-  documentoJson["value"] = valorTemperatura;
-  serializeJson(documentoJson, temperaturaJson);
-  Serial.println("Enviando dados de temperatura");
-  Serial.println(temperaturaJson);
-  
-  client.publish("topicTemperatura", temperaturaJson); 
+  documentoJson["variable"] = "peso";
+  documentoJson["value"] = valor_mapeado;
+  documentoJson["unit"] = "gramas";
+  serializeJson(documentoJson, bufferJson);
+  Serial.println(bufferJson);
+  client.publish("topicoTDSPI", bufferJson);
   delay(5000);
-
   client.loop();
+
 }
