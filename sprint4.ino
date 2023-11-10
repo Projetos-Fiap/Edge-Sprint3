@@ -134,10 +134,25 @@ void loop() {
   documentoJson["variable"] = "peso";
   documentoJson["value"] = valor_mapeado;
   documentoJson["unit"] = "gramas";
+  documentoJson["type"] = getType(action);
   serializeJson(documentoJson, bufferJson);
   Serial.println(bufferJson);
   client.publish("topicoTDSPI", bufferJson);
   delay(5000);
   client.loop();
+}
 
+String getType(int action) {
+  switch (action) {
+    case 0:
+      return "Alumínio";
+    case 1:
+      return "Plástico";
+    case 2:
+      return "Vidro";
+    // Adicione mais cases conforme necessário
+
+    default:
+      return ""; // Retorne uma string vazia para casos não tratados
+  }
 }
