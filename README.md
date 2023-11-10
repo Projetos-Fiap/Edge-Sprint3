@@ -39,6 +39,9 @@ Além disso, pretendemos desenvolver uma máquina apelidada de "GreenMachine", u
 
 ## Instruções de Uso e Dependências
 
+- Vídeo explicativo: https://youtu.be/dRXNOnAiGWk
+- Simulação: https://wokwi.com/projects/380860068303373313
+
 - Para que o sistema funcione, é necessário montar o circuito com o ESP32, balança e display. Em seguida, carregue o código correspondente em sua memórias.
 - Para que o código funcione corretamente, é preciso instalar e declarar as seguintes bibliotecas no início do código:
 
